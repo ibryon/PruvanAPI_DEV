@@ -29,7 +29,7 @@ namespace PruvanAPI_13.Controllers
             {
                 UserStatus uv = new UserStatus().getUser(payload);
                 sl.WriteToLog(new string[] { "------------ LOG ENTRY (STATUS UPDATE)------------", "Username: " + uv.username, "Password: " + uv.password, "WO Count: " + uv.workOrders.Length.ToString() });
-                bool isValid = uv.IsUserValid(uv);
+                bool isValid = uv.IsUserValid2(uv);
                 if (isValid == true)
                 {
                     sl.WriteToLog(new string[] { "User: " + uv.username + "  Is Valid" });

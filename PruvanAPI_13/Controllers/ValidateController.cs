@@ -50,7 +50,7 @@ namespace PruvanAPI_13.Controllers
                 string payload = Request.Content.ReadAsStringAsync().Result;
                 UserValidate uv = new UserValidate().getUser(payload);
                 sl.WriteToLog(new string[] { "------------ LOG ENTRY (VALIDATE)------------", "Username: " + uv.username, "Password: " + uv.password, "PushKey" + uv.pushkey });
-                bool isValid = uv.IsUserValid(uv);
+                bool isValid = uv.IsUserValid2(uv);
                 if (isValid == true)
                 {
                     UserValidated vu = new UserValidated("", true);

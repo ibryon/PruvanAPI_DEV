@@ -32,7 +32,7 @@ namespace PruvanAPI_13.Controllers
         {
             string payload = Request.Content.ReadAsStringAsync().Result;
             WOUser uv = new WOUser().getUser(payload);
-            bool isValid = uv.IsUserValid(uv);
+            bool isValid = uv.IsUserValid2(uv);
 
             sl.WriteToLog(new string[] { "------------ LOG ENTRY (GET WORK ORDERS)------------", "Username: " + uv.username, "Password: " + uv.password, "TimeStamp: " + uv.timestamp, "" });
 

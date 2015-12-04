@@ -43,7 +43,7 @@ namespace PruvanAPI_13.Controllers
             Pictures pic = new Pictures().GetPicture(payload);
 
             sl.WriteToLog(new string[] { "------------ LOG ENTRY (UPLOAD PICTURES)------------", "Username: " + pic.username, "Work Order No: " + pic.key2 });
-            bool isValid = pic.IsUserValid(pic);
+            bool isValid = pic.IsUserValid2(pic);
             if (isValid == true)
             {
                 LoginMembership utcNow = new LoginMembership().GetMembership(pic.username);
