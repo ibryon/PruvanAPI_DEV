@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="devpkfsm/pruvanapi" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^E:\\PKMG\\Code\\PruvanAPI_13\\PruvanAPI_13\\obj\\Debug\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^E:\\PKMG\\Code\\PruvanAPI_13\\PruvanAPI_13\\obj\\Debug\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="AppCoreDEV-Web.config Connection String" description="" value="Data Source=192.168.40.20;Initial Catalog=AppCore;Persist Security Info=True;User ID=vdsdev;Password=Echo.1234" tags="">
+    <parameterEntry kind="XmlFile" scope="E:\\PKMG\\Code\\PruvanAPI_13\\PruvanAPI_13\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='AppCoreDEV']/@connectionString" />
+  </parameter>
+  <parameter name="REAMSViewDEV-Web.config Connection String" description="" value="Data Source=192.168.40.20;Initial Catalog=REAMSViewDev;Persist Security Info=True;User ID=vdsdev;Password=Echo.1234" tags="">
+    <parameterEntry kind="XmlFile" scope="E:\\PKMG\\Code\\PruvanAPI_13\\PruvanAPI_13\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='REAMSViewDEV']/@connectionString" />
+  </parameter>
+  <parameter name="REAMSViewLOCALConnectionString-Web.config Connection String" description="REAMSViewLOCALConnectionString Connection String used in web.config by the application to access the database." value="Data Source=MIKA-IT-LPT02\MSSQLSERVER2012D;Initial Catalog=REAMSView;Persist Security Info=True;User ID=pkmgdev;Password=PKMGdev#1" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="E:\\PKMG\\Code\\PruvanAPI_13\\PruvanAPI_13\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='REAMSViewLOCALConnectionString']/@connectionString" />
+  </parameter>
+  <parameter name="AppCoreLOCALConnectionString-Web.config Connection String" description="AppCoreLOCALConnectionString Connection String used in web.config by the application to access the database." value="Data Source=MIKA-IT-LPT02\MSSQLSERVER2012D;Initial Catalog=AppCore;Persist Security Info=True;User ID=pkmgdev;Password=PKMGdev#1" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="E:\\PKMG\\Code\\PruvanAPI_13\\PruvanAPI_13\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='AppCoreLOCALConnectionString']/@connectionString" />
+  </parameter>
+</parameters>

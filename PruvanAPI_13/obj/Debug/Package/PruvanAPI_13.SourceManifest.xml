@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sitemanifest>
+  <IisApp path="E:\PKMG\Code\PruvanAPI_13\PruvanAPI_13\obj\Debug\Package\PackageTmp" managedRuntimeVersion="v4.0" />
+  <setAcl path="E:\PKMG\Code\PruvanAPI_13\PruvanAPI_13\obj\Debug\Package\PackageTmp" setAclResourceType="Directory" />
+  <setAcl path="E:\PKMG\Code\PruvanAPI_13\PruvanAPI_13\obj\Debug\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
+</sitemanifest>
