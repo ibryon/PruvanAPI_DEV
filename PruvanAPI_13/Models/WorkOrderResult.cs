@@ -32,15 +32,18 @@ namespace PruvanAPI_13.Models
                 foreach (DataRow dr in wo.Rows)
                 {
                     woFull[rowIndex] = new WorkOrder();
-                    woFull[rowIndex].workorderNumber = dr["WorkorderNo"].ToString();
+                    woFull[rowIndex].workOrderNumber = dr["WorkorderNo"].ToString();
                     woFull[rowIndex].address1 = dr["Address"].ToString();
                     woFull[rowIndex].city = dr["City"].ToString();
                     woFull[rowIndex].state = dr["State"].ToString();
                     woFull[rowIndex].zip = dr["ZipCode"].ToString();
-                    woFull[rowIndex].clientStatus = dr["WorkOrderStatusId"].ToString();
+                    woFull[rowIndex].clientStatus = dr["ClientStatus"].ToString();
                     woFull[rowIndex].wostatusid = int.Parse(dr["WorkOrderStatusId"].ToString());
                     woFull[rowIndex].workorderId = int.Parse(dr["WorkorderId"].ToString());
                     woFull[rowIndex].vendorId = int.Parse(dr["VendorId"].ToString());
+                    woFull[rowIndex].description = dr["Description"].ToString();
+                    woFull[rowIndex].dueDate = dr["DueOn"].ToString();
+                    woFull[rowIndex].clientDueDate = dr["DueOn"].ToString();
                     //add default service(s)
                     List<WOServices> services = new List<WOServices>();
                     //generic WO task
@@ -98,15 +101,18 @@ namespace PruvanAPI_13.Models
                 foreach (DataRow dr in wo.Rows)
                 {
                     woFull[rowIndex] = new WorkOrder();
-                    woFull[rowIndex].workorderNumber = dr["WorkorderNo"].ToString();
+                    woFull[rowIndex].workOrderNumber = dr["WorkorderNo"].ToString();
                     woFull[rowIndex].address1 = dr["Address"].ToString();
                     woFull[rowIndex].city = dr["City"].ToString();
                     woFull[rowIndex].state = dr["State"].ToString();
                     woFull[rowIndex].zip = dr["ZipCode"].ToString();
-                    woFull[rowIndex].clientStatus = dr["WorkOrderStatusId"].ToString();
+                    woFull[rowIndex].clientStatus = dr["ClientStatus"].ToString();
                     woFull[rowIndex].wostatusid = int.Parse(dr["WorkOrderStatusId"].ToString());
                     woFull[rowIndex].workorderId = int.Parse(dr["WorkorderId"].ToString());
                     woFull[rowIndex].vendorId = int.Parse(dr["VendorId"].ToString());
+                    woFull[rowIndex].description = dr["Description"].ToString();
+                    woFull[rowIndex].dueDate = dr["DueOn"].ToString();
+                    woFull[rowIndex].clientDueDate = dr["DueOn"].ToString();
                     //add default service
                     List<WOServices> services = new List<WOServices>();
                     //generic WO task
@@ -163,15 +169,18 @@ namespace PruvanAPI_13.Models
                 foreach (DataRow dr in wo.Rows)
                 {
                     woFull[rowIndex] = new WorkOrder();
-                    woFull[rowIndex].workorderNumber = dr["WorkorderNo"].ToString();
+                    woFull[rowIndex].workOrderNumber = dr["WorkorderNo"].ToString();
                     woFull[rowIndex].address1 = dr["Address"].ToString();
                     woFull[rowIndex].city = dr["City"].ToString();
                     woFull[rowIndex].state = dr["State"].ToString();
                     woFull[rowIndex].zip = dr["ZipCode"].ToString();
-                    woFull[rowIndex].clientStatus = dr["WorkOrderStatusId"].ToString();
+                    woFull[rowIndex].clientStatus = dr["ClientStatus"].ToString();
                     woFull[rowIndex].wostatusid = int.Parse(dr["WorkOrderStatusId"].ToString());
                     woFull[rowIndex].workorderId = int.Parse(dr["WorkorderId"].ToString());
                     woFull[rowIndex].vendorId = int.Parse(dr["VendorId"].ToString());
+                    woFull[rowIndex].description = dr["Description"].ToString();
+                    woFull[rowIndex].dueDate = dr["DueOn"].ToString();
+                    woFull[rowIndex].clientDueDate = dr["DueOn"].ToString();
                     //add default service
                     List<WOServices> services = new List<WOServices>();
                     //generic WO task

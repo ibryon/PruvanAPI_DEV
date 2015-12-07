@@ -50,7 +50,7 @@ namespace PruvanAPI_13.Models
             LoginMembership utcNow = new LoginMembership().GetMembership(user.username);
             if (utcNow != null)
             {
-                if (LoginHelper.Hash(utcNow.PasswordSalt, user.password) == utcNow.Password)
+                if (LoginHelper.Hash(utcNow.PasswordSalt, user.token) == utcNow.Password)
                 {
                     returnBool = true;
                 }

@@ -52,7 +52,7 @@ namespace PruvanAPI_13.Models
             {
                 returnBool = false;
             }
-            else if (LoginHelper.Hash(utcNow.PasswordSalt, uv.password) == utcNow.Password)
+            else if (LoginHelper.Hash(utcNow.PasswordSalt, uv.token) == utcNow.Password)
             {
                 returnBool = true;
             }

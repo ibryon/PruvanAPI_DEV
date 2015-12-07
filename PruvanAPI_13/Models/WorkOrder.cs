@@ -12,7 +12,7 @@ namespace PruvanAPI_13.Models
     {
         private ServiceLog sl = new ServiceLog();
         public WorkOrder() { }
-        public string workorderNumber { get; set; }
+        public string workOrderNumber { get; set; }
         public int workorderId { get; set; }
         public string address1 { get; set; }
         public string city { get; set; }
@@ -25,6 +25,9 @@ namespace PruvanAPI_13.Models
         public string AppID { get; set; }
         public string PropID { get; set; }
         public int vendorId { get; set; }
+        public string description { get; set; }
+        public string dueDate { get; set; }
+        public string clientDueDate { get; set; }
         public List<WOServices> services { get; set; }
         public bool UpdateWorkOrder(WorkOrder[] wo)
         {
@@ -35,11 +38,11 @@ namespace PruvanAPI_13.Models
                 {
                     List<SqlParameter> parms = new List<SqlParameter>();
                     //update each wo
-                    parms.Add(new SqlParameter("WorkorderNo", w.workorderNumber));
+                    parms.Add(new SqlParameter("WorkorderNo", w.workOrderNumber));
                     parms.Add(new SqlParameter("NewStatus", w.status));
-                    sl.WriteToLog(new string[] { w.workorderNumber + "-Status changed to: " + w.status });
+                    sl.WriteToLog(new string[] { w.workOrderNumber + "-Status changed to: " + w.status });
                     dm.ExecuteNonQuery("spPruvanWorkOrder_Update", parms);
-                    sl.WriteToLog(new string[] { w.workorderNumber + "-Status Updated Successfully " });
+                    sl.WriteToLog(new string[] { w.workOrderNumber + "-Status Updated Successfully " });
                 }
                 return true;
             }
@@ -51,9 +54,9 @@ namespace PruvanAPI_13.Models
             WOServices wos = new WOServices() { serviceName = "Task" };
             List<WOServices> wList = new List<WOServices>();
             wList.Add(wos);
-            WorkOrder wo1 = new WorkOrder { workorderNumber = "0123456789", address1 = "111 NW 1 ST", city = "DORAL", state = "FL", zip = "33166", services = wList };
-            WorkOrder wo2 = new WorkOrder { workorderNumber = "1234567890", address1 = "112 NW 2 ST", city = "DORAL", state = "FL", zip = "33166", services = wList };
-            WorkOrder wo3 = new WorkOrder { workorderNumber = "2345678901", address1 = "113 NW 3 ST", city = "DORAL", state = "FL", zip = "33166", services = wList };
+            WorkOrder wo1 = new WorkOrder { workOrderNumber = "0123456789", address1 = "111 NW 1 ST", city = "DORAL", state = "FL", zip = "33166", services = wList };
+            WorkOrder wo2 = new WorkOrder { workOrderNumber = "1234567890", address1 = "112 NW 2 ST", city = "DORAL", state = "FL", zip = "33166", services = wList };
+            WorkOrder wo3 = new WorkOrder { workOrderNumber = "2345678901", address1 = "113 NW 3 ST", city = "DORAL", state = "FL", zip = "33166", services = wList };
             woList[0] = wo1;
             woList[1] = wo2;
             woList[2] = wo3;
@@ -68,7 +71,7 @@ namespace PruvanAPI_13.Models
             if (dt.Rows.Count > 0)
             {
                 WorkOrder w = new WorkOrder();
-                w.workorderNumber = dt.Rows[0]["WorkorderNo"].ToString();
+                w.workOrderNumber = dt.Rows[0]["WorkorderNo"].ToString();
                 w.AppID = dt.Rows[0]["AcAppId"].ToString();
                 w.PropID = dt.Rows[0]["PropertyId"].ToString();
                 w.clientStatus = dt.Rows[0]["WorkOrderStatusId"].ToString();

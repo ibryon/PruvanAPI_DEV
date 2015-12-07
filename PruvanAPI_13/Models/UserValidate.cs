@@ -14,6 +14,7 @@ namespace PruvanAPI_13.Models
     {
         public string username { get; set; }
         public string password { get; set; }
+        public string token { get; set; }
         public string pushkey { get; set; }
         public UserValidate getUser(string text)
         {
@@ -52,7 +53,7 @@ namespace PruvanAPI_13.Models
             LoginMembership utcNow = new LoginMembership().GetMembership(uv.username);
             if (utcNow != null)
             {
-                if (LoginHelper.Hash(utcNow.PasswordSalt, uv.password) == utcNow.Password)
+                if (LoginHelper.Hash(utcNow.PasswordSalt, uv.token) == utcNow.Password)
                 {
                     returnBool = true;
                 }
